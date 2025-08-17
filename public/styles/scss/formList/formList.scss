@@ -1,0 +1,29 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  padding-left: 0;
+  list-style: none;
+  counter-reset: item;
+}
+
+.item {
+  position: relative;
+  padding-left: 53px;
+  counter-increment: item;
+  line-height: 2;
+  display: flex;
+  align-items: center;
+}
+
+.item::before {
+  content: counter(item) ".";
+  position: absolute;
+  left: 0;
+  background: linear-gradient(145.08deg, #E61726 12.35%, #D4208C 83.63%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 33px;
+  font-weight: 800;
+}
