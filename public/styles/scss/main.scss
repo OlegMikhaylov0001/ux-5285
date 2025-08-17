@@ -1,4 +1,8 @@
-@import "./formList/formList.scss";
+/* stylelint-disable */
+@import "formList/formList.scss";
+@import "popup/popup.scss";
+/* stylelint-enable */
+
 body {
   font-family: 'Open Sans', serif;
   line-height: 1;
