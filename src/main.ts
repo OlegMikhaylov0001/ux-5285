@@ -175,21 +175,21 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function showSuccessMessage() {
-    const popupContent = document.querySelector('.popup-content')
-    if (popupContent) {
-      popupContent.innerHTML = `
-          <button class="popup-close">
-            <img src="/assets/crossClosed.svg" alt="close button" />
-          </button>
-          <div class="success-message">
-            <h2>Thank You!</h2>
-            <p>To complete registration, please check your e-mail</p>
-          </div>
-        `
+    const formPopup = document.querySelector('.popup-overlay:not(.success-popup)') as HTMLElement
+    const successPopup = document.querySelector('.success-popup') as HTMLElement
 
-      const newCloseBtn = popupContent.querySelector('.popup-close') as HTMLButtonElement
-      if (newCloseBtn) {
-        newCloseBtn.addEventListener('click', closePopup)
+    if (formPopup) {
+      formPopup.style.display = 'none'
+    }
+
+    if (successPopup) {
+      successPopup.style.display = 'flex'
+
+      const closeBtn = successPopup.querySelector('.popup-close') as HTMLButtonElement
+      if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+          successPopup.style.display = 'none'
+        })
       }
     }
   }

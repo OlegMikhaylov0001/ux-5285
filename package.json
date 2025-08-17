@@ -9,7 +9,7 @@
                 "build": "tsc && vite build",
                 "preview": "vite preview",
                 "build:css": "sass src/styles/main.scss:public/style.css --watch",
-                "build:styles": "sass src/styles/main.scss:public/style.css",
+              "build:styles": "sass public/styles/style.scss:public/style.css",
                 "predeploy": "npm run build",
                 "deploy": "gh-pages -d dist"
             },
