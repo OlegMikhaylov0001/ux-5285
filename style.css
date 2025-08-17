@@ -1,0 +1,334 @@
+@import './reset.css';
+@import 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap';
+.formList {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  list-style: none;
+  counter-reset: item-form;
+}
+@media (width >= 1024px) {
+  .formList {
+    gap: 30px;
+  }
+}
+.formList .item-form {
+  counter-increment: item-form;
+  line-height: 2;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.formList .item-form p {
+  margin-block: 4px;
+  font-size: 19px;
+  font-weight: 600;
+}
+@media (width >= 1024px) {
+  .formList .item-form p {
+    font-size: 38px;
+    margin-block: 0;
+  }
+}
+.formList .item-form::before {
+  content: counter(item-form) ".";
+  background: linear-gradient(145.08deg, #E61726 12.35%, #D4208C 83.63%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 33px;
+  font-weight: 800;
+  line-height: 1;
+}
+@media (width >= 1024px) {
+  .formList .item-form::before {
+    font-size: 55px;
+  }
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(15px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-form {
+  width: 100%;
+  max-width: 620px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-inline: auto;
+}
+@media (width >= 1024px) {
+  .popup-form {
+    gap: 30px;
+  }
+}
+
+.popup {
+  background: white;
+  border-radius: 20px;
+  max-width: 400px;
+  width: 85%;
+  position: relative;
+  max-height: 439px;
+  height: 100%;
+  padding: 72px 15px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+@media (width >= 1024px) {
+  .popup {
+    padding-block: 150px;
+    max-width: 1270px;
+    max-height: 652px;
+    border-radius: 50px;
+  }
+}
+
+.popup-close {
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  width: 21px;
+  height: 21px;
+}
+@media (width >= 1024px) {
+  .popup-close {
+    width: 28px;
+    height: 28px;
+    top: 45px;
+    right: 45px;
+  }
+}
+
+.popup-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  gap: 30px;
+}
+.popup-content h2 {
+  max-width: 620px;
+  font-weight: 700;
+  font-size: 17px;
+  text-align: center;
+  color: rgb(58, 58, 58);
+  line-height: 1.4;
+}
+@media (width >= 1024px) {
+  .popup-content h2 {
+    font-size: 24px;
+    line-height: 1.15;
+  }
+}
+
+.submitBtn {
+  max-width: 166px;
+  text-transform: uppercase;
+  padding: 15px;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  font-weight: 800;
+  line-height: 1;
+  background: linear-gradient(238.08deg, #d4208c 0.42%, #e61726 82.5%);
+  width: 100%;
+  color: #fff;
+  border-radius: 5px;
+  margin-inline: auto;
+}
+@media (width >= 1024px) {
+  .submitBtn {
+    line-height: 1.4;
+    padding: 25px;
+    max-width: 387px;
+    font-size: 23px;
+  }
+}
+
+.labelWrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: 60px;
+  width: 100%;
+}
+
+.input {
+  text-align: center;
+  width: 100%;
+  padding: 12px 0;
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  outline: none;
+  color: #3a3a3a;
+}
+.input::placeholder {
+  line-height: 1.6;
+  color: rgb(179, 179, 179);
+  font-size: 14px;
+}
+@media (width >= 1024px) {
+  .input::placeholder {
+    font-size: 18px;
+  }
+}
+
+.labelWrapper::after {
+  content: "";
+  position: absolute;
+  bottom: 16px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: rgba(58, 58, 58, 0.3);
+  transition: all 0.3s ease;
+}
+
+.labelWrapper:has(.error-message)::after {
+  background: red;
+}
+
+.error-message {
+  position: absolute;
+  bottom: -4.5px;
+  color: red;
+  font-size: 14px;
+}
+
+.success-message {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: center;
+  margin-block: auto;
+}
+@media (width >= 1024px) {
+  .success-message {
+    gap: 20px;
+  }
+}
+.success-message h2 {
+  font-weight: 800;
+  background: linear-gradient(145.08deg, #e61726 12.35%, #d4208c 83.63%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 35px;
+}
+@media (width >= 1024px) {
+  .success-message h2 {
+    font-size: 77px;
+  }
+}
+.success-message p {
+  max-width: 176px;
+  font-size: 14px;
+  line-height: 1;
+  margin: 0 auto;
+}
+@media (width >= 1024px) {
+  .success-message p {
+    font-size: 28px;
+    max-width: 741px;
+    font-weight: 700;
+  }
+}
+
+body {
+  font-family: "Open Sans", serif;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-inline: 15px;
+  padding-block: 24px 22px;
+  gap: 20px;
+  width: 100%;
+}
+@media (width >= 1024px) {
+  .container {
+    padding-inline: 90px;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100vh;
+  }
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.introWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+@media (width >= 1024px) {
+  .introWrapper {
+    max-width: 730px;
+    align-items: start;
+  }
+}
+
+.mainBannerWrapper {
+  max-width: 730px;
+}
+
+.title {
+  background: linear-gradient(145.08deg, #E61726 12.35%, #D4208C 83.63%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  max-width: 476px;
+  width: 100%;
+  font-size: 35px;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 18px;
+}
+@media (width >= 1024px) {
+  .title {
+    font-size: 77px;
+    margin-bottom: 30px;
+  }
+}
+
+.buttonForm {
+  display: grid;
+  align-items: center;
+  max-width: 251px;
+  font-size: 14px;
+  line-height: 1.4;
+  font-weight: 800;
+  width: 100%;
+  padding-block: 15px;
+  text-transform: uppercase;
+  background: linear-gradient(238.08deg, #D4208C 0.42%, #E61726 82.5%);
+  color: #fff;
+  border-radius: 8px;
+}
+@media (width >= 1024px) {
+  .buttonForm {
+    font-size: 23px;
+    max-width: 387px;
+    padding-block: 24px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
