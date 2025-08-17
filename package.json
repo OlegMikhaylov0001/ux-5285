@@ -1,25 +1,27 @@
 {
-    "homepage": "https://OlegMikhaylov0001.github.io/ux-5285",
-    "name": "homepage",
-    "private": true,
-    "version": "0.0.0",
-    "type": "module",
-    "scripts": {
-        "dev": "vite",
-        "build": "tsc && vite build",
-        "preview": "vite preview",
-        "build:css": "sass src/styles/main.scss:public/style.css --watch",
-        "build:styles": "sass src/styles/main.scss:public/style.css"
-    },
-    "devDependencies": {
-        "gh-pages": "^6.3.0",
-        "prettier": "^3.3.1",
-        "prettier-plugin-organize-imports": "^4.2.0",
-        "sass": "^1.90.0",
-        "stylelint": "^16.23.1",
-        "stylelint-config-standard-scss": "^15.0.1",
-        "stylelint-scss": "^6.12.1",
-        "typescript": "^5.2.2",
-        "vite": "^5.2.0"
-    }
-}
+            "homepage": "https://OlegMikhaylov0001.github.io/ux-5285",
+            "name": "homepage",
+            "private": true,
+            "version": "0.0.0",
+            "type": "module",
+            "scripts": {
+                "dev": "vite",
+                "build": "tsc && vite build",
+                "preview": "vite preview",
+                "build:css": "sass src/styles/main.scss:public/style.css --watch",
+                "build:styles": "sass src/styles/main.scss:public/style.css",
+                "predeploy": "npm run build",
+                "deploy": "gh-pages -d dist"
+            },
+            "devDependencies": {
+                "gh-pages": "^6.3.0",
+                "prettier": "^3.3.1",
+                "prettier-plugin-organize-imports": "^4.2.0",
+                "sass": "^1.90.0",
+                "stylelint": "^16.23.1",
+                "stylelint-config-standard-scss": "^15.0.1",
+                "stylelint-scss": "^6.12.1",
+                "typescript": "^5.2.2",
+                "vite": "^5.2.0"
+            }
+        }
