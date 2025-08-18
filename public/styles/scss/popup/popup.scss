@@ -21,7 +21,7 @@
     margin-inline: auto;
 
     @media (width >= 1024px) {
-      gap: 30px;
+      gap: 32px;
     }
   }
 
@@ -56,6 +56,10 @@
       height: 28px;
       top: 45px;
       right: 45px;
+    }
+
+    img {
+      width: 100%;
     }
   }
 
@@ -100,6 +104,8 @@
       padding: 25px;
       max-width: 387px;
       font-size: 23px;
+      border-radius: 10px;
+      letter-spacing: 0.2875rem;
     }
   }
 
@@ -117,12 +123,12 @@
     padding: 12px 0;
     border: none;
     background: transparent;
+    line-height: 1.6;
     font-size: 14px;
     outline: none;
     color: #3a3a3a;
 
     &::placeholder {
-      line-height: 1.6;
       color: rgb(179 179 179 / 100%);
       font-size: 14px;
 

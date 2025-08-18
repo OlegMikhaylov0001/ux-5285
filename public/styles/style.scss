@@ -17,7 +17,7 @@ body {
   align-items: center;
   padding-inline: 15px;
   padding-block: 24px 22px;
-  gap: 20px;
+  gap: 22px;
   width: 100%;
 
   @media (width >= 1024px) {
@@ -63,7 +63,8 @@ body {
 
   @media (width >= 1024px) {
     font-size: 77px;
-    margin-bottom: 30px;
+    margin-bottom: 60px;
+    letter-spacing: -0.1406rem;
   }
 }
 

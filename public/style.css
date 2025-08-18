@@ -14,13 +14,18 @@
 }
 .formList .item-form {
   counter-increment: item-form;
-  line-height: 2;
   display: flex;
   align-items: center;
   gap: 10px;
 }
+@media (width >= 1024px) {
+  .formList .item-form {
+    gap: 22px;
+  }
+}
 .formList .item-form p {
   margin-block: 4px;
+  line-height: 2;
   font-size: 19px;
   font-weight: 600;
 }
@@ -28,6 +33,8 @@
   .formList .item-form p {
     font-size: 38px;
     margin-block: 0;
+    max-height: 75px;
+    letter-spacing: -0.1187rem;
   }
 }
 .formList .item-form::before {
@@ -108,6 +115,9 @@
     right: 45px;
   }
 }
+.popup-close img {
+  width: 100%;
+}
 
 .popup-content {
   display: flex;
@@ -151,6 +161,8 @@
     padding: 25px;
     max-width: 387px;
     font-size: 23px;
+    border-radius: 10px;
+    letter-spacing: 0.2875rem;
   }
 }
 
@@ -168,12 +180,12 @@
   padding: 12px 0;
   border: none;
   background: transparent;
+  line-height: 1.6;
   font-size: 14px;
   outline: none;
   color: #3a3a3a;
 }
 .input::placeholder {
-  line-height: 1.6;
   color: rgb(179, 179, 179);
   font-size: 14px;
 }
@@ -256,7 +268,7 @@ body {
   align-items: center;
   padding-inline: 15px;
   padding-block: 24px 22px;
-  gap: 20px;
+  gap: 22px;
   width: 100%;
 }
 @media (width >= 1024px) {
@@ -305,7 +317,8 @@ body {
 @media (width >= 1024px) {
   .title {
     font-size: 77px;
-    margin-bottom: 30px;
+    margin-bottom: 60px;
+    letter-spacing: -0.1406rem;
   }
 }
 
