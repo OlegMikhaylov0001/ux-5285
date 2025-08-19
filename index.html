@@ -8,77 +8,84 @@
     <title>How to Participate</title>
   </head>
   <body>
-    <header></header>
     <main id="app">
       <section class="section">
         <div class="container">
-          <div class="mainBannerWrapper">
-            <img src="/assets/mainImg.webp" alt="mainBanner" class="mainBanner" />
+          <div class="main-banner-wrapper">
+            <img src="/assets/mainImg.webp" alt="Main banner" class="main-banner" />
           </div>
-          <div class="introWrapper">
+
+          <div class="intro-wrapper">
             <h1 class="title">
               How to
               <br />
               Participate
             </h1>
-            <ol class="formList">
-              <li class="item-form"><p>Subscribe to our News</p></li>
-              <li class="item-form"><button class="buttonForm">Sign Up</button></li>
-              <li class="item-form"><p>Check your email inbox</p></li>
-              <li class="item-form"><p>Wait till September 22</p></li>
+
+            <ol class="form-list">
+              <li class="form-item"><p>Subscribe to our News</p></li>
+              <li class="form-item">
+                <button class="form-button" type="button">Sign Up</button>
+              </li>
+              <li class="form-item"><p>Check your email inbox</p></li>
+              <li class="form-item"><p>Wait till September 22</p></li>
             </ol>
           </div>
         </div>
       </section>
     </main>
-    <footer></footer>
+
     <script type="module" src="/src/main.ts"></script>
-    <div class="popup-overlay" style="display: none">
+
+    <!-- Popup: Registration -->
+    <div class="popup-overlay" hidden>
       <div class="popup">
         <div class="popup-content">
-          <button class="popup-close">
-            <img src="/assets/crossClosed.svg" alt="close button" />
+          <button class="popup-close" aria-label="Close popup">
+            <img src="/assets/crossClosed.svg" alt="" />
           </button>
-          <h2>To register, enter the mail to which our news is sent and set your password</h2>
+
+          <h2>Register</h2>
+          <p>Enter the email where you receive our news and set your password</p>
+
           <form class="popup-form">
-            <div>
-              <label class="labelWrapper">
-                <input
-                  class="input"
-                  placeholder="Example@email.com"
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                />
-              </label>
-            </div>
-            <div>
-              <label class="labelWrapper">
-                <input
-                  class="input"
-                  placeholder="Password"
-                  type="password"
-                  id="password"
-                  name="password"
-                  required
-                />
-              </label>
-            </div>
-            <button class="submitBtn" type="submit">submit</button>
+            <label class="label-wrapper" for="email">Email</label>
+            <input
+              class="input"
+              placeholder="example@email.com"
+              type="email"
+              id="email"
+              name="email"
+              required
+            />
+
+            <label class="label-wrapper" for="password">Password</label>
+            <input
+              class="input"
+              placeholder="Password"
+              type="password"
+              id="password"
+              name="password"
+              required
+            />
+
+            <button class="submit-btn" type="submit">Submit</button>
           </form>
         </div>
       </div>
     </div>
-    <div class="popup-overlay success-popup" style="display: none">
+
+    <!-- Popup: Success -->
+    <div class="popup-overlay success-popup" hidden>
       <div class="popup">
         <div class="popup-content">
-          <button class="popup-close">
-            <img src="/assets/crossClosed.svg" alt="close button" />
+          <button class="popup-close" aria-label="Close popup">
+            <img src="/assets/crossClosed.svg" alt="" />
           </button>
+
           <div class="success-message">
             <h2>Thank You!</h2>
-            <p>To complete registration, please check your e-mail</p>
+            <p>To complete registration, please check your email</p>
           </div>
         </div>
       </div>
